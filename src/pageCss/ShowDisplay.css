@@ -7,3 +7,8 @@
   grid-column-gap: 1em;
 
 }
+
+.inText {
+  font-size: 40px;
+  color: black;
+}
