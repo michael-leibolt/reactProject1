@@ -1,0 +1,12 @@
+
+
+.header {
+  font-size: xx-large;
+  color: white;
+}
+
+.mainPlacement {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
