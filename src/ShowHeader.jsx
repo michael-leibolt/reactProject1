@@ -8,9 +8,10 @@ function ShowHeader({ picked }) {
       <div className="mainAlign">
         <h1>ShowHeaderPlaceHolder</h1>
         <img
-          src='https://static.tvmaze.com/uploads/images/medium_portrait/34/85146.jpg'
+          src={null}
           alt = 'testImage'
         />
+        <h2>{picked.summary}</h2>
       </div>
     </>
   )

@@ -17,7 +17,7 @@ let [picked, setPicked] =useState([])
       <Link to='/'><button>Go To Splash Page</button></Link>
       <div>
         <div className='mainPlacement'>
-          <AdminHeader />
+          <AdminHeader picked={picked} />
           <ShowHeader picked={picked}/>
         </div>
         <div>

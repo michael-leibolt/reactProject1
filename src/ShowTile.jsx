@@ -12,7 +12,7 @@ function ShowTile({ show, setPicked }) {
   const checkerFunc = () => detailChecker(show)
   const clickerFunc = () => {
     setOpen(o => !o)
-    setPicked(show.id)
+    setPicked(show)
   }
 
   return (
