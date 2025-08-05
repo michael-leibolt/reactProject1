@@ -37,40 +37,22 @@ function ShowTile({ show }) {
 
 export default ShowTile
 
+
 function detailChecker(show) {
-  //console.log('checkerFunc to detail checker')
-  let output = ""
+  let details = show.show;
+  console.log(details.network.country.name);
 
-  let details = show.show
-
-  if(details.name.length !== 0) {
-    output += `Title: ${details.name} `
-  } else {
-    output += `Unknown Title`
-  }
-
-  if(show.rating.average !== true) {
-    output += `Rating: ${show.rating.avarage}`
-  } else {
-    output += `Unknown Rating `
-  }
-
-  if(details.name.length !== 0) {
-    output += `Title: ${details.name} `
-  } else {
-    output += `Unknown Title `
-  }
-
-  if(details.name.length !== 0) {
-    output += `Title: ${details.name} `
-  } else {
-    output += `Unknown Title `
-  }
-
+  const output =
+    (details.name !== true ? `Title: ${details.name}. `
+      : `Unknown Title `) +
+    (details.language !== true ? `Language: ${details.language}. `
+      : `Unknown Language `) +
+    (details.network.country.name !== true ? `Country: ${details.network.country.name}. `
+      : `Unknown Country `);
 
   return (
     <>
-      {`${output}`}
+      {output}
     </>
-  )
+  );
 }
