@@ -2,10 +2,12 @@ import './pageCss/Main.css'
 import AdminHeader from './AdminHeader'
 import ShowHeader from './ShowHeader'
 import ShowDisplay from './ShowDisplay'
+import { useState } from 'react'
 
 
 
 function Main() {
+let [shows, setShows] = useState([])
 
   return (
     <>
@@ -16,7 +18,7 @@ function Main() {
           <ShowHeader />
         </div>
         <div>
-          <ShowDisplay className='displayPlacement'/>
+          <ShowDisplay className='displayPlacement' setShows={setShows} shows={shows}/>
         </div>
       </div>
     </>
