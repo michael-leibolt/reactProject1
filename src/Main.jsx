@@ -8,6 +8,7 @@ import { useState } from 'react'
 
 function Main() {
 let [shows, setShows] = useState([])
+let [picked, setPicked] =useState([])
 
   return (
     <>
@@ -15,10 +16,15 @@ let [shows, setShows] = useState([])
       <div>
         <div className='mainPlacement'>
           <AdminHeader />
-          <ShowHeader />
+          <ShowHeader picked={picked}/>
         </div>
         <div>
-          <ShowDisplay className='displayPlacement' setShows={setShows} shows={shows}/>
+          <ShowDisplay
+          className='displayPlacement'
+          setShows={setShows}
+          shows={shows}
+          setPicked={setPicked}
+        />
         </div>
       </div>
     </>

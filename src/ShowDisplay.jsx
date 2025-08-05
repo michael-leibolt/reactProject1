@@ -4,7 +4,7 @@ import './pageCss/ShowDisplay.css'
 
 
 
-function ShowDisplay({ setShows, shows}) {
+function ShowDisplay({ setShows, shows, setPicked}) {
 
   useEffect(()=> {
     fetch('https://api.tvmaze.com/schedule')
@@ -21,7 +21,7 @@ function ShowDisplay({ setShows, shows}) {
         alt='Display Placeholder'
       />
       <div className='tile'>
-        {shows.map(show => <ShowTile  show={show} key={show.id}/>)}
+        {shows.map(show => <ShowTile  show={show} key={show.id} setPicked={setPicked}/>)}
       </div>
     </>
 

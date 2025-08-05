@@ -5,18 +5,22 @@ import 'reactjs-popup/dist/index.css'
 import './pageCss/ShowDisplay.css'
 
 
-function ShowTile({ show }) {
+function ShowTile({ show, setPicked }) {
   const [ open, setOpen ] = useState(false)
   const closeModal = () => setOpen(false)
   const net = show.show.network
   const checkerFunc = () => detailChecker(show)
+  const clickerFunc = () => {
+    setOpen(o => !o)
+    setPicked(show.id)
+  }
 
   return (
     <>
-      <div>
+      <div className='backer'>
         <h1>{show.show.name}</h1>
         <h3>{show.airtime}</h3>
-        <button type='button' className="button" onClick={()=> setOpen(o => !o)} >
+        <button type='button' className="button" onClick={()=> clickerFunc()} >
           Learn More
         </button>
         <Popup open={open} closeOnDocumentClick onClose={closeModal}>
@@ -40,15 +44,15 @@ export default ShowTile
 
 function detailChecker(show) {
   let details = show.show;
-  console.log(details.network.country.name);
+  //console.log(details.network.country.name);
 
   const output =
-    (details.name !== true ? `Title: ${details.name}. `
+    (details.name !== null ? `Title: ${details.name}. `
       : `Unknown Title `) +
-    (details.language !== true ? `Language: ${details.language}. `
-      : `Unknown Language `) +
-    (details.network.country.name !== true ? `Country: ${details.network.country.name}. `
-      : `Unknown Country `);
+    (details.language !== null ? `Language: ${details.language}. `
+      : `Unknown Language `) //+
+    //(details.network.country.name !== null ? `Country: ${details.network.country.name}. `
+      //: `Unknown Country `);
 
   return (
     <>

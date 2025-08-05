@@ -1,7 +1,7 @@
 import './pageCss/ShowHeader.css'
 
 
-function ShowHeader() {
+function ShowHeader({ picked }) {
 
   return (
     <>
